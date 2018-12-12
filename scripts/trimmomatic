@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+java -jar /usr/local/bin/trimmomatic-0.38.jar  "$@"

@@ -1,0 +1,25 @@
+Bootstrap: docker
+From: alpine:3.8
+
+
+%post
+    apk update
+    apk upgrade
+    apk add bash bzip2-dev g++ gcc libc-dev make ncurses-dev xz-dev zlib-dev musl-dev perl-app-cpanminus perl-dev tzdata 
+    apk add curl freetype-dev libpng-dev python2 python2-dev py2-pip
+    
+    pip install sierrapy
+
+    cpanm --no-wget RTF::Writer 
+    cpanm --no-wget JSON 
+    cpanm --no-wget Data::Dumper
+    cpanm --no-wget File::Slurp
+    cpanm --no-wget DateTime
+
+%files
+    scripts/buildreport.pl /usr/bin/
+    scripts/phw.jpg /usr/local/bin/
+
+%runscript
+    exec sierrapy "$@"
+
