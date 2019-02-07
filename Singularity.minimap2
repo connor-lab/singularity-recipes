@@ -19,6 +19,6 @@ From: alpine:3.8
     cd samtools-1.8 && ./configure && make && make install
 
     wget https://github.com/broadinstitute/picard/releases/download/2.18.14/picard.jar -O /usr/local/bin/picard.jar
-    
-%files
-    scripts/picard /usr/local/bin
+
+    wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/picard -O /usr/local/bin/picard
+    chmod 775 /usr/local/bin/picard
