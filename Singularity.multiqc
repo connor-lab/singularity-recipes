@@ -13,3 +13,7 @@ From: alpine:3.8
     find /usr/local/bin/pandoc-2.3 -name "pandoc" -exec ln -s {} /usr/local/bin \;
 
     pip install git+https://github.com/ewels/MultiQC.git
+
+%labels
+    Maintainer m-bull
+    Version multiqc-latest

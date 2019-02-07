@@ -26,3 +26,7 @@ From: centos:latest
     chmod +x /usr/local/bin/json_to_tsv.py
 
     ln -s /usr/local/bin/mccortex31 /usr/bin/
+
+%labels
+    Maintainer m-bull
+    Version mykrobe-atlas-latest

@@ -15,4 +15,7 @@ From: centos:latest
 
     git clone https://github.com/tseemann/mlst.git /usr/local/bin/mlst-latest
     ln -s /usr/local/bin/mlst-latest/bin/* /usr/local/bin
- 
+
+%labels
+    Maintainer m-bull
+    Version mlst-latest 

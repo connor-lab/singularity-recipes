@@ -22,3 +22,7 @@ From: alpine:3.8
 
     wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/picard -O /usr/local/bin/picard
     chmod 775 /usr/local/bin/picard
+
+%labels
+    Maintainer m-bull
+    Version minimap2-latest
