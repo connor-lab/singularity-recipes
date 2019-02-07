@@ -16,12 +16,15 @@ From: alpine:3.8
     cpanm --no-wget File::Slurp
     cpanm --no-wget DateTime
 
-    wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/buildreport.pl -O /usr/local/bin/buildreport.pl
+    curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/buildreport.pl -o /usr/local/bin/buildreport.pl
     chmod 775 /usr/local/bin/buildreport.pl
    
-    wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/phw.jpg -O /usr/local/bin/phw.jpg
+    curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/phw.jpg -o /usr/local/bin/phw.jpg
 
 
 %runscript
     exec sierrapy "$@"
 
+%labels
+    Maintainer m-bull
+    Version sierrapy-latest
