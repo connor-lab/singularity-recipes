@@ -19,6 +19,9 @@ From: alpine:3.8
     cd centrifuge-summary
     mv centrifuge-summary /usr/local/bin/
 
+%environment
+    export TAXONKIT_DB=/opt/taxonkit
+
 %labels
     Maintainer m-bull
     Version taxonkit-0.3.0
