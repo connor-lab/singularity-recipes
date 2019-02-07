@@ -11,3 +11,7 @@ From: alpine:3.8
     mkdir -p /usr/local/bin/Krona/KronaTools/taxonomy
     cd /usr/local/bin/Krona/KronaTools && ./install.pl 
     cd /usr/local/bin/Krona/KronaTools && ./updateTaxonomy.sh
+
+%labels
+    Maintainer m-bull
+    Version KronaTools-latest

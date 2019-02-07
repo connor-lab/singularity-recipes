@@ -13,3 +13,7 @@ From: alpine:3.8
     cd /usr/local/bin/centrifuge-1.0.4-beta
     make -j 4
     make install
+
+%labels
+    Maintainer m-bull
+    Version centrifuge-1.0.4-beta

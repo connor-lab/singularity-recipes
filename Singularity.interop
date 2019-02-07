@@ -13,3 +13,7 @@ From: alpine:3.8
     cmake ../interop
     cmake --build .
     make install
+
+%labels
+    Maintainer m-bull
+    Version interop-v1.1.8 
