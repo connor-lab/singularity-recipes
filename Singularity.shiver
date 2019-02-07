@@ -4,7 +4,7 @@ From: centos:7.5.1804
 %post
     yum install -y epel-release
     yum -y update
-    yum install -y git make
+    yum install -y git make 
     yum install -y bc bzip2 bzip2-devel gcc ncurses-devel java-1.8.0-openjdk-headless unzip xz-devel zlib-devel
     yum install -y python-devel python2-pip
     yum install -y python36 python36-devel python36-setuptools
@@ -29,7 +29,7 @@ From: centos:7.5.1804
     curl -fsSL 'http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.38.zip' -o /usr/local/bin/Trimmomatic-0.38.zip
     cd /usr/local/bin && unzip Trimmomatic-0.38.zip
     ln -s /usr/local/bin/Trimmomatic-0.38/trimmomatic-0.38.jar /usr/local/bin
-    wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/trimmomatic -O /usr/local/bin/trimmomatic
+    curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/trimmomatic -o /usr/local/bin/trimmomatic
     chmod 775 /usr/local/bin/trimmomatic
 
     git clone https://github.com/lh3/seqtk.git /tmp/seqtk
