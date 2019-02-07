@@ -51,3 +51,7 @@ From: centos:latest
 %environment
     export PICARD_JAR=/usr/local/bin/picard.jar
     export GATK_JAR=/usr/local/bin/GenomeAnalysisTK.jar
+
+%labels
+    Maintainer m-bull
+    Version snapperdb-m-bull-git-latest

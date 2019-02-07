@@ -29,6 +29,8 @@ From: centos:7.5.1804
     curl -fsSL 'http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.38.zip' -o /usr/local/bin/Trimmomatic-0.38.zip
     cd /usr/local/bin && unzip Trimmomatic-0.38.zip
     ln -s /usr/local/bin/Trimmomatic-0.38/trimmomatic-0.38.jar /usr/local/bin
+    wget https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/trimmomatic -O /usr/local/bin/trimmomatic
+    chmod 775 /usr/local/bin/trimmomatic
 
     git clone https://github.com/lh3/seqtk.git /tmp/seqtk
     cd /tmp/seqtk
@@ -50,11 +52,12 @@ From: centos:7.5.1804
 
     rm -rf /tmp/seqtk /tmp/samtools* /tmp/smalt* /tmp/mafft*
 
-%files
-    scripts/trimmomatic /usr/local/bin
-
 %environment
     LC_ALL=C
     export LC_ALL
     PATH=$PATH:/usr/local/bin/shiver
     export PATH
+
+%labels
+    Maintainer m-bull
+    Version shiver-latest
