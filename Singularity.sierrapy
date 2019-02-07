@@ -15,12 +15,15 @@ From: alpine:3.8
     cpanm --no-wget Data::Dumper
     cpanm --no-wget File::Slurp
     cpanm --no-wget DateTime
+    cpanm --no-wget DateTime::TimeZone
 
     curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/buildreport.pl -o /usr/local/bin/buildreport.pl
     chmod 775 /usr/local/bin/buildreport.pl
    
     curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/phw.jpg -o /usr/local/bin/phw.jpg
 
+%environment
+    export TZ=Europe/London
 
 %runscript
     exec sierrapy "$@"
