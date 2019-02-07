@@ -13,8 +13,12 @@ From: alpine:3.8
 
     mv *.dmp /opt/taxonkit  
 
-    curl -fsSL 'https://github.com/shenwei356/taxonkit/releases/download/v0.2.4/taxonkit_linux_amd64.tar.gz' | tar -xz -C /usr/local/bin/
+    curl -fsSL 'https://github.com/shenwei356/taxonkit/releases/download/v0.3.0/taxonkit_linux_amd64.tar.gz' | tar -xz -C /usr/local/bin/
 
     git clone https://github.com/connor-lab/centrifuge-summary
     cd centrifuge-summary
     mv centrifuge-summary /usr/local/bin/
+
+%labels
+    Maintainer m-bull
+    Version taxonkit-0.3.0
