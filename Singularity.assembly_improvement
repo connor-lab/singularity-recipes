@@ -8,7 +8,14 @@ From: alpine:3.8
 %post
     apk update
     apk upgrade
-    apk add bash boost-dev cmake curl g++ gcc make musl-dev perl-app-cpanminus perl-dev zlib-dev 
+    apk add bash boost-dev cmake curl db-dev expat-dev g++ gcc gd-dev libxml2-dev make musl-dev perl-app-cpanminus perl-dev zlib-dev 
+
+    curl -fsSL http://www.cpan.org/authors/id/M/MI/MIROD/XML-DOM-XPath-0.14.tar.gz | tar -xz
+    cd XML-DOM-XPath-0.14
+    #sed "s/use encoding 'utf8'/use utf8/g" t/test_non_ascii.t
+    perl Makefile.PL && make && make install
+    cd ..
+    rm -rf XML-DOM-XPath-0.14
 
     cpanm --no-wget -f Bio::AssemblyImprovement 
     
