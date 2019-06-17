@@ -19,8 +19,8 @@ From: centos:latest
     cd /usr/local/bin
     git clone https://github.com/Mykrobe-tools/mykrobe-atlas-cli.git mykrobe-latest
     cd mykrobe-latest
-    wget -O mykrobe-data.tar.gz https://goo.gl/DXb9hN && tar -zxvf mykrobe-data.tar.gz && rm -fr src/mykrobe/data && mv mykrobe-data src/mykrobe/data
-    pip3 install .
+    wget -O mykrobe-data.tar.gz http://s3.climb.ac.uk/mykrobe/mykrobe-data.tgz && tar -zxvf mykrobe-data.tar.gz && rm -fr src/mykrobe/data && mv mykrobe-data src/mykrobe/data
+    pip3.4 install .
 
     curl -fsSL 'https://raw.githubusercontent.com/iqbal-lab/Mykrobe-predictor/master/scripts/json_to_tsv.py' -o /usr/local/bin/json_to_tsv.py
     chmod +x /usr/local/bin/json_to_tsv.py
