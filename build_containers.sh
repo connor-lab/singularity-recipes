@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-imageDir="../singularity-images"
+imageDir="../images"
 
 mkdir -p $imageDir
 
