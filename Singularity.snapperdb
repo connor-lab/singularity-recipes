@@ -10,7 +10,7 @@ From: centos:latest
 
  
     pip install cython
-    pip install argparse bintrees biopython psycopg2 paramiko PyVCF PyYAML hashids joblib
+    pip install argparse bintrees biopython psycopg2-binary paramiko PyVCF PyYAML hashids joblib
 
     pip install git+https://github.com/m-bull/PHEnix.git
     pip install git+https://github.com/m-bull/snapperdb.git
