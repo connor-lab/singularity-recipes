@@ -161,7 +161,7 @@ for my $vals (@$perljson) {
               }
             #$prtext[0] = $prtext[0].$inDrugScores->{'partialScores'}->[0]->{'mutations'}->[0]->{'text'}.", ";
           }
-          if($partials->{'mutations'}->[0]->{'primaryType'} =~ m/Minor/)
+          if($partials->{'mutations'}->[0]->{'primaryType'} =~ m/Accessory/)
           {
             if (index($prtext[1], $keyval) == -1) {
               $prtext[1] = $prtext[1].$partials->{'mutations'}->[0]->{'text'}.", ";
@@ -196,7 +196,7 @@ for my $vals (@$perljson) {
           }
           #$intext[0] = $intext[0].$partials->{'mutations'}->[0]->{'text'}.", ";
         }
-        if($partials->{'mutations'}->[0]->{'primaryType'} =~ m/Minor/)
+        if($partials->{'mutations'}->[0]->{'primaryType'} =~ m/Accessory/)
         {
           if (index($intext[1], $keyval) == -1) {
             $intext[1] = $intext[1].$partials->{'mutations'}->[0]->{'text'}.", ";
@@ -295,7 +295,7 @@ my $prtablehead = RTF::Writer::TableRowDecl->new('widths' => [9000]);
 $rtf->row($prtablehead, [\'\b','Protease (PR) codons analysed: '.$prrange]);
 my $prtable = RTF::Writer::TableRowDecl->new('widths' => [2000,7000]);
 $rtf->row($prtable, [\'\b','PI Major Resistance Mutations'],$prtext[0]);
-$rtf->row($prtable, [\'\b','PI Minor Resistance Mutations'],$prtext[1]);
+$rtf->row($prtable, [\'\b','PI Accessory Resistance Mutations'],$prtext[1]);
 $rtf->row($prtable, [\'\b','Other Mutations'],$prtext[2]);
 $rtf->row($prtable, [\'\b','Protease Inhibitors'], $prtext[4]);
 
@@ -316,7 +316,7 @@ my $inttablehead = RTF::Writer::TableRowDecl->new('widths' => [9000]);
 $rtf->row($inttablehead, [\'\b','Integrase codons analysed: '.$inrange]);
 my $inttable= RTF::Writer::TableRowDecl->new('widths' => [2000,7000]);
 $rtf->row($inttable, [\'\b','IN Major Resistance Mutations'],$intext[0]);
-$rtf->row($inttable, [\'\b','IN Minor Resistance Mutations'],$intext[1]);
+$rtf->row($inttable, [\'\b','IN Accessory Resistance Mutations'],$intext[1]);
 $rtf->row($inttable, [\'\b','Other Mutations'],$intext[2]);
 $rtf->row($inttable, [\'\b','Integrase strand transfer inhibitors'],$intext[4]);
 
