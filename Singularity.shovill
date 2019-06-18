@@ -6,7 +6,6 @@ From: continuumio/miniconda3:latest
     apt-get update && apt-get -y upgrade
     apt-get install -y procps
     /opt/conda/bin/conda install -c bioconda shovill
-    /opt/conda/bin/conda install -y openssl=1.0.2p
 
 %labels
     Maintainer m-bull
