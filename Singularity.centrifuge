@@ -1,12 +1,12 @@
 Bootstrap: docker
-From: alpine:3.8
+From: debian:latest
 
 %post
-    apk update
-    apk upgrade
-    apk add git make
-    apk add bash curl g++ gcc bzip2-dev libc-dev ncurses-dev xz-dev zlib-dev
-    apk add perl
+    apt-get update
+    apt-get -y upgrade
+    apt-get -y install git make
+    apt-get -y install bash curl g++ gcc libbz2-dev liblzma-dev zlib1g-dev
+    apt-get -y install perl python
 
     cd /usr/local/bin
     curl -fsSL "https://github.com/infphilo/centrifuge/archive/v1.0.4-beta.tar.gz" | tar xz
