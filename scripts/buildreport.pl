@@ -22,16 +22,16 @@ my $date = $dt->dmy('-');
 # this script is not for manal use, but as part of a pipeline.
 
 Getopt::Long::Configure ('bundling');
-GetOptions ('i=s' => \$sequence,
-            'n=s' => \$sample,
-            'o=s' => \$operator,
-            'l=s' => \$lab,
-            'h' => \$help) or help_msg();
+GetOptions ('i=s' => \my $sequence,
+            'n=s' => \my $sample,
+            'o=s' => \my $operator,
+            'l=s' => \my $lab,
+            'h' => \my $help) or help_msg();
 
 # Use a standardised naming scheme 
 
-$log_file = $sample.'.log';
-$jsonfile = $sample.".json";
+my $log_file = $sample.'.log';
+my $jsonfile = $sample.".json";
 
 # build the command
 my $cmd = "sierrapy fasta ".$sequence." > ".$jsonfile;
@@ -44,7 +44,7 @@ close $logfh;
 # run the command
 $cmd .= " 2>> $log_file";
 print "Running: $cmd\n";
-system($cmd)==0 or err("Error running command, check $outdir/$log_file");
+system($cmd)==0 or err("Error running command, check $log_file");
 
 # read back in the results and parse
 
@@ -56,27 +56,33 @@ my $obj = from_json( $file );
 
 print "from JSON\n";
 
-@prtext;
-@rttext;
-@nrttext;
-@intext;
+my @prtext;
+my @rttext;
+my @nrttext;
+my @intext;
 
-%rtvals;
-%prvals;
-%invals;
-%nrvals;
+my %rtvals;
+my %prvals;
+my %invals;
+my %nrvals;
 
-$rtrange ="";
-$prrange ="";
-$inrange ="";
+my $rtrange ="";
+my $prrange ="";
+my $inrange ="";
 
-$hivdbv ="";
-$hivdbd ="";
+my $hivdbv ="";
+my $hivdbd ="";
+my $partialScores ="";
+my $keyval ="";
+my $keycontent ="";
+my $alignedGeneSequences ="";
+my $mutations ="";
+my $subtypetxt ="";
 
 
 # 0 = major ; 1 = minor ; 2 = other ; 3 = comments ; 4 = resistances
 
-for($i = 0 ; $i <5 ; $i++)
+for(my $i = 0 ; $i <5 ; $i++)
 {
 	$prtext[$i] =" ";
 	$rttext[$i] =" ";
@@ -91,7 +97,7 @@ my $gene = "";
 my $drugres = "";
 my $drugscores = "";
 for my $vals (@$perljson) {
-    $subtypetxt = $subtypetxt ." ".$vals->{'subtypeText'};
+    my $subtypetxt = $subtypetxt ." ".$vals->{'subtypeText'};
     $drugres = $vals->{'drugResistance'};
     for my $drugresvs (@$drugres) {
       $hivdbv = $drugresvs->{'version'}->{'text'};
