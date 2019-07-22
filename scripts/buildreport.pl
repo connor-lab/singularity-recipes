@@ -373,7 +373,7 @@ $rtf->row($signtab, "Position:\n","","Date:","");
 
 $rtf->paragraph(\'\qc\fs20\i\b','
 For technical enquiries please contact Dr Sally Corden (02920745226) sally.corden@wales.nhs.uk or Joanne Watkins (02920742046) joanne.watkins@wales.nhs.uk
-For clinical enquires please contact Dr Nicola Price (02920742178) nicola.price@wales.nhs.uk or Dr Matthijs Backx (02920742166) matthijs.backx@wales.nhs.uk');
+For clinical enquires please contact Dr Matthijs Backx (02920742166) matthijs.backx@wales.nhs.uk');
 
 
 sub help_msg
