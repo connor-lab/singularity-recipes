@@ -7,15 +7,19 @@ From: alpine:3.8
     apk upgrade
     apk add bash bzip2-dev g++ gcc libc-dev make ncurses-dev xz-dev zlib-dev musl-dev perl-app-cpanminus perl-dev tzdata 
     apk add curl freetype-dev libpng-dev python2 python2-dev py2-pip
+    apk add perl-path-tiny perl-json perl-data-dumper perl-file-slurp perl-datetime perl-datetime-timezone
     
     pip install sierrapy
 
+    # No idea why this wants to be installed on its own, but it works.
+    #cpanm --no-wget IPC::System::Simple 
+
     cpanm --no-wget RTF::Writer 
-    cpanm --no-wget JSON 
-    cpanm --no-wget Data::Dumper
-    cpanm --no-wget File::Slurp
-    cpanm --no-wget DateTime
-    cpanm --no-wget DateTime::TimeZone
+    #cpanm --no-wget JSON 
+    #cpanm --no-wget Data::Dumper
+    #cpanm --no-wget File::Slurp
+    #cpanm --no-wget DateTime
+    #cpanm --no-wget DateTime::TimeZone
 
     curl -fsSL https://raw.githubusercontent.com/connor-lab/singularity-recipes/master/scripts/buildreport.pl -o /usr/local/bin/buildreport.pl
     chmod 775 /usr/local/bin/buildreport.pl
