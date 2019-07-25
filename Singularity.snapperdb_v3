@@ -1,12 +1,11 @@
 Bootstrap: docker
-From: centos:latest
+From: postgres:11
 
 %post
-    yum install -y epel-release
-    yum -y update
-    yum install -y git make
-    yum install -y bzip2 bzip2-devel gcc-c++ ncurses-devel java-1.8.0-openjdk-headless unzip xz-devel zlib-devel
-    yum install -y python-devel python2-pip
+    apt-get -y update && apt-get -y upgrade
+    apt-get -y install curl git make
+    apt-get -y install bzip2 libbz2-dev g++ libncurses5-dev openjdk-8-jdk-headless unzip liblzma-dev zlib1g-dev
+    apt-get -y install python-dev python-pip
 
     pip install cython
     pip install argparse bintrees biopython psycopg2-binary paramiko PyVCF PyYAML hashids joblib
