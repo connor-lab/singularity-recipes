@@ -107,7 +107,7 @@ for my $vals (@$perljson) {
       $drugscores = $drugresvs->{'drugScores'};
       for my $inDrugScores (@$drugscores)
       {
-	print $gene "\n";
+	#print $gene "\n";
 	if($gene =~ m/RT/)
 	{
 		if($inDrugScores->{'drugClass'}->{'name'} =~ m/NNRTI/)
