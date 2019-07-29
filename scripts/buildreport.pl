@@ -92,12 +92,11 @@ for(my $i = 0 ; $i <5 ; $i++)
 
 # The stanford output includes a variable use of arrays within the JSON that is poorly documented.
 # This code parses through the JSON layers and pulls out the variables we are interested in for our report
-
 my $gene = "";
 my $drugres = "";
 my $drugscores = "";
 for my $vals (@$perljson) {
-    my $subtypetxt = $subtypetxt ." ".$vals->{'subtypeText'};
+    $subtypetxt = $subtypetxt ." ".$vals->{'subtypeText'};
     $drugres = $vals->{'drugResistance'};
     for my $drugresvs (@$drugres) {
       $hivdbv = $drugresvs->{'version'}->{'text'};
