@@ -6,13 +6,13 @@ From: alpine:3.8
     apk update
     apk upgrade
     apk add bash bzip2-dev g++ gcc git libc-dev make ncurses-dev xz-dev zlib-dev
-    apk add curl freetype-dev libpng-dev python2 python2-dev py2-pip
+    apk add curl freetype-dev libpng-dev python3 python3-dev
     
     cd /usr/local/bin
     curl -fsSL "https://github.com/jgm/pandoc/releases/download/2.3/pandoc-2.3-linux.tar.gz" | tar xz
     find /usr/local/bin/pandoc-2.3 -name "pandoc" -exec ln -s {} /usr/local/bin \;
 
-    pip install git+https://github.com/ewels/MultiQC.git
+    python3 -m pip install git+https://github.com/ewels/MultiQC.git
 
 %labels
     Maintainer m-bull
