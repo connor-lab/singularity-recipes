@@ -3,7 +3,7 @@ From: postgres:11
 
 %post
     apt-get -y update && apt-get -y upgrade
-    apt-get -y install curl git make
+    apt-get -y install curl git make procps
     apt-get -y install bzip2 libbz2-dev g++ libncurses5-dev openjdk-8-jdk-headless unzip liblzma-dev zlib1g-dev
     apt-get -y install python-dev python-pip
 
@@ -24,6 +24,11 @@ From: postgres:11
     curl -fsSL 'https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2' | tar -xj -C /tmp/
     cd /tmp/bcftools-1.9 && ./configure && make && make install
     rm -rf /tmp/bcftools-1.9
+
+    # HTSLib
+    curl -fsSL 'https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2' | tar -xj -C /tmp/
+    cd /tmp/htslib-1.9 && ./configure && make && make install
+    rm -rf /tmp/htslib-1.9
 
     # Minimap2
     cd /tmp
