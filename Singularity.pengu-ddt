@@ -3,7 +3,7 @@ From: debian:latest
 
 %post
     apt-get -y update && apt-get -y upgrade
-    apt-get install -y git make python3-pip
+    apt-get install -y git make python3-pip procps
 
     pip3 install git+https://github.com/connor-lab/pengu-ddt
 
