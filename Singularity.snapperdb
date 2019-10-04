@@ -42,7 +42,7 @@ From: centos:latest
     rm -rf /tmp/bwa
 
     # Picard
-    curl -fsSL 'https://github.com/broadinstitute/picard/releases/download/2.18.16/picard.jar' --output /usr/local/bin/picard.jar
+    curl -fsSL 'http://github.com/broadinstitute/picard/releases/download/2.20.4/picard.jar' --output /usr/local/bin/picard.jar
 
     # GATK
     curl -fsSL 'https://software.broadinstitute.org/gatk/download/auth?package=GATK-archive&version=3.8-1-0-gf15c1c3ef' | tar -xj -C /usr/local/bin
